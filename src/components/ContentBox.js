@@ -3,11 +3,11 @@ import { Box } from "grommet";
 function ContentBox(props) {
   return (
     <Box
-      width={{ min: "300px", max: "1350px" }}
-      margin={{ horizontal: "auto", vertical: "large" }}
-      pad="large"
+      fill="true"
+      pad="medium"
       round="xsmall"
       background="#ffffff"
+      margin={{ bottom: "large" }}
     >
       {props.content}
     </Box>
