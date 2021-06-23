@@ -55,13 +55,11 @@ function App() {
             gap="small"
           >
             <Button
-              primary
-              icon={<Mail />}
-              color="#ff5555"
+              icon={<Mail color="#ff5555" />}
               onClick={() => window.open("mailto:patrickjgabr@gmail.com")}
             />
-            <Button primary icon={<Linkedin />} color="#8be9fd" />
-            <Button primary icon={<Github />} color="#ffb86c" />
+            <Button icon={<Linkedin color="#8be9fd" />} />
+            <Button icon={<Github color="#ffb86c" />} />
             {/* <Button primary label="Resume" icon={<DocumentPdf />} /> */}
           </Box>
         </Box>
