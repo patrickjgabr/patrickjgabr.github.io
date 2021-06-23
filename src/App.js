@@ -46,13 +46,6 @@ function App() {
           </Heading>
         }
       />
-      <ContentBox
-        content={
-          <Heading level={3} margin="none">
-            Resume
-          </Heading>
-        }
-      />
     </Grommet>
   );
 }
