@@ -66,10 +66,11 @@ function App() {
         <Box width={{ min: "300px", max: "1350px" }} margin="auto">
           <Markdown
             style={{
-              paddingLeft: "40px",
-              paddingTop: "20px",
-              paddingBottom: "20px",
+              paddingLeft: "20px",
+              paddingTop: "15px",
+              paddingBottom: "15px",
             }}
+            id="latest"
           >
             {
               "**Latest Blog Post:** [1/1/1970 - Work In Progress](https://google.com.au)"
