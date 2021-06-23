@@ -63,7 +63,7 @@ function App() {
             {/* <Button primary label="Resume" icon={<DocumentPdf />} /> */}
           </Box>
         </Box>
-        <Box width={{ min: "300px", max: "1350px" }} margin="auto">
+        <Box width={{ min: "300px", max: "1100px" }} margin="auto">
           <Markdown
             style={{
               paddingLeft: "20px",
