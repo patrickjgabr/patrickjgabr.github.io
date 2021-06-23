@@ -54,18 +54,12 @@ function App() {
         >
           <Button
             primary
-            label="Email"
             icon={<Mail />}
             color="#ff5555"
-            onClick={window.open("mailto:patrickjgabr@gmail.com")}
+            onClick={() => window.open("mailto:patrickjgabr@gmail.com")}
           />
-          <Button
-            primary
-            label="LinkedIn"
-            icon={<Linkedin />}
-            color="#8be9fd"
-          />
-          <Button primary label="Github" icon={<Github />} color="#ffb86c" />
+          <Button primary icon={<Linkedin />} color="#8be9fd" />
+          <Button primary icon={<Github />} color="#ffb86c" />
           {/* <Button primary label="Resume" icon={<DocumentPdf />} /> */}
         </Box>
       </Box>
@@ -81,6 +75,13 @@ function App() {
         content={
           <Heading level={3} margin="none">
             Projects
+          </Heading>
+        }
+      />
+      <ContentBox
+        content={
+          <Heading level={3} margin="none">
+            Contact
           </Heading>
         }
       />
