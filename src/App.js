@@ -1,24 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+import { Grommet, Box, Button, Heading, Markdown } from "grommet";
+import ContentBox from "./components/ContentBox";
+
+const theme = {
+  global: {
+    colors: {
+      brand: "#228BE6",
+    },
+    font: {
+      family: "Roboto",
+      size: "18px",
+      height: "20px",
+    },
+  },
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grommet theme={theme}>
+      <Box
+        pad="xlarge"
+        background="#282a36"
+        height="300px"
+        justify="center"
+        elevation="medium"
+      >
+        <Heading margin={{ bottom: "xsmall", top: "none" }}>
+          Patrick Gabriel
+        </Heading>
+        <Heading level={2} margin={{ vertical: "none" }} color="#50fa7b">
+          Aspiring Software Engineer from Brisbane, Australia.
+        </Heading>
+      </Box>
+      <ContentBox content={<Markdown>Hello world.</Markdown>} />
+      <ContentBox
+        content={
+          <Heading level={3} margin="none">
+            Blog
+          </Heading>
+        }
+      />
+      <ContentBox
+        content={
+          <Heading level={3} margin="none">
+            Projects
+          </Heading>
+        }
+      />
+      <ContentBox
+        content={
+          <Heading level={3} margin="none">
+            Resume
+          </Heading>
+        }
+      />
+    </Grommet>
   );
 }
 
