@@ -1,0 +1,2 @@
+(this["webpackJsonppatrickjgabr-react-gh-pages"]=this["webpackJsonppatrickjgabr-react-gh-pages"]||[]).push([[0],{9:function(e,t,r){"use strict";r.r(t);var c=r(1),a=r.n(c),n=r(3),s=r.n(n),i=r(0);var p=function(){return Object(i.jsx)("div",{className:"App",children:"Hello World"})};s.a.render(Object(i.jsx)(a.a.StrictMode,{children:Object(i.jsx)(p,{})}),document.getElementById("root"))}},[[9,1,2]]]);
+//# sourceMappingURL=main.d1dab47e.chunk.js.map
