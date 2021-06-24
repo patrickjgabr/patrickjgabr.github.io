@@ -28,39 +28,39 @@ function App() {
   return (
     <Grommet theme={theme} id="page-container">
       <div id="content-wrap">
-        <Box
-          background="#282a36"
-          height="300px"
-          elevation="medium"
-          style={{ position: "relative" }}
-          justify="center"
-        >
-          <Heading
-            margin={{ bottom: "xsmall", top: "none", horizontal: "xlarge" }}
-          >
-            Patrick Gabriel
-          </Heading>
-          <Heading
-            level={2}
-            margin={{ vertical: "none", horizontal: "xlarge" }}
-            color="#50fa7b"
-          >
-            Aspiring Software Engineer from Brisbane, Australia.
-          </Heading>
-
+        <Box background="#282a36">
           <Box
-            style={{ position: "absolute", bottom: 0, right: 0 }}
-            pad="small"
-            direction="row"
-            gap="small"
+            height="300px"
+            style={{ position: "relative", width: "1920px", margin: "auto" }}
+            justify="center"
           >
-            <Button
-              icon={<Mail color="#ff5555" />}
-              onClick={() => window.open("mailto:patrickjgabr@gmail.com")}
-            />
-            <Button icon={<Linkedin color="#8be9fd" />} />
-            <Button icon={<Github color="#ffb86c" />} />
-            {/* <Button primary label="Resume" icon={<DocumentPdf />} /> */}
+            <Heading
+              margin={{ bottom: "xsmall", top: "none", horizontal: "xlarge" }}
+            >
+              Patrick Gabriel
+            </Heading>
+            <Heading
+              level={2}
+              margin={{ vertical: "none", horizontal: "xlarge" }}
+              color="#50fa7b"
+            >
+              Aspiring Software Engineer from Brisbane, Australia.
+            </Heading>
+
+            <Box
+              style={{ position: "absolute", bottom: 0, right: 0 }}
+              pad="small"
+              direction="row"
+              gap="small"
+            >
+              <Button
+                icon={<Mail color="#ff5555" />}
+                onClick={() => window.open("mailto:patrickjgabr@gmail.com")}
+              />
+              <Button icon={<Linkedin color="#8be9fd" />} />
+              <Button icon={<Github color="#ffb86c" />} />
+              {/* <Button primary label="Resume" icon={<DocumentPdf />} /> */}
+            </Box>
           </Box>
         </Box>
         <Box width={{ min: "300px", max: "1100px" }} margin="auto">
