@@ -2,6 +2,10 @@ import { Grommet, Box, Button, Heading, Markdown, Footer, Text } from "grommet";
 import ContentBox from "./components/ContentBox";
 import { DocumentPdf, Github, Linkedin, Mail, Resume } from "grommet-icons";
 import "./App.css";
+import Blog from "./components/Blog";
+import Home from "./components/Home";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 const theme = {
   global: {
@@ -76,28 +80,10 @@ function App() {
               "**Latest Blog Post:** [1/1/1970 - Work In Progress](https://google.com.au)"
             }
           </Markdown>
-          <ContentBox content={<Markdown>Hello world.</Markdown>} />
-          <ContentBox
-            content={
-              <Heading level={3} margin="none">
-                Blog
-              </Heading>
-            }
-          />
-          <ContentBox
-            content={
-              <Heading level={3} margin="none">
-                Projects
-              </Heading>
-            }
-          />
-          <ContentBox
-            content={
-              <Heading level={3} margin="none">
-                Contact
-              </Heading>
-            }
-          />
+          <Home />
+          <Blog />
+          <Projects />
+          <Contact />
         </Box>
       </div>
       <Footer
