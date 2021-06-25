@@ -9,7 +9,7 @@ function BlogPost(props) {
         background="#ffffff"
         style={{ outline: "1px solid lightgrey" }}
       >
-        <Heading level={4} margin={{ top: "none" }}>
+        <Heading level={4} margin={{ top: "none", bottom: "small" }}>
           Heading
         </Heading>
         <Markdown>Body</Markdown>

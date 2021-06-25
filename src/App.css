@@ -22,10 +22,14 @@
   font-family: Hack;
 }
 .slick-prev:before {
-  color: lightgreen !important;
+  color: #ffb86c !important;
   background-color: #fff;
 }
 .slick-next:before {
-  color: lightgreen !important;
+  color: #ffb86c !important;
   background-color: #fff;
+}
+
+.slick-dots {
+  height: 14px;
 }

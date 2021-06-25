@@ -5,6 +5,8 @@ function Project(props) {
     <Box
       style={{
         minHeight: "300px",
+        maxWidth: "480px",
+        margin: "auto",
         borderRadius: "5px",
         boxShadow: "0px 0px 0px 1px black",
         background: "#44475a",
@@ -19,10 +21,9 @@ function Project(props) {
           height: "32px",
           lineHeight: "32px",
           background: "#282a36",
-          color: "white",
         }}
       >
-        Project 1
+        <div style={{ color: "white", fontSize: "16px" }}>{props.title}</div>
         <Box
           style={{
             position: "absolute",
