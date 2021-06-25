@@ -5,8 +5,8 @@ function Project(props) {
     <Box
       style={{
         minHeight: "280px",
-        maxWidth: "460px",
-        margin: "auto",
+        marginLeft:"10px",
+        marginRight:"10px",
         borderRadius: "5px",
         boxShadow: "0px 0px 0px 1px black",
         background: "#44475a",
