@@ -38,7 +38,7 @@ function Blog(props) {
   return (
     <Box
       fill="true"
-      pad={{ bottom: "large", top: "medium", left: "medium", right: "medium" }}
+      pad={{ bottom: "35px", top: "medium", left: "medium", right: "medium" }}
       round="xsmall"
       background="#ffffff"
       margin={{ bottom: "large" }}
