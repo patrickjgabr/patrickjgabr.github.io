@@ -1,4 +1,5 @@
 import { Box, Heading } from "grommet";
+import Project from "./Project";
 
 function Projects(props) {
   return (
@@ -12,6 +13,7 @@ function Projects(props) {
       <Heading level={3} margin={{ top: "none", bottom: "small" }}>
         Projects
       </Heading>
+      <Project />
     </Box>
   );
 }
