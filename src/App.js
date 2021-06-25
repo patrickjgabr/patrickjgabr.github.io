@@ -6,6 +6,8 @@ import Blog from "./components/Blog";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const theme = {
   global: {
@@ -68,18 +70,6 @@ function App() {
           </Box>
         </Box>
         <Box width={{ min: "300px", max: "1100px" }} margin="auto">
-          <Markdown
-            style={{
-              paddingLeft: "20px",
-              paddingTop: "15px",
-              paddingBottom: "15px",
-            }}
-            id="latest"
-          >
-            {
-              "**Latest Blog Post:** [1/1/1970 - Work In Progress](https://google.com.au)"
-            }
-          </Markdown>
           <Home />
           <Blog />
           <Projects />

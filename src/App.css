@@ -21,3 +21,11 @@
 #latest {
   font-family: Hack;
 }
+.slick-prev:before {
+  color: lightgreen !important;
+  background-color: #fff;
+}
+.slick-next:before {
+  color: lightgreen !important;
+  background-color: #fff;
+}

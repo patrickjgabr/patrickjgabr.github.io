@@ -7,7 +7,7 @@ function Home(props) {
       pad="medium"
       round="xsmall"
       background="#ffffff"
-      margin={{ bottom: "large" }}
+      margin={{ bottom: "large", top: "48px" }}
     >
       <Markdown>Hello World</Markdown>
     </Box>
