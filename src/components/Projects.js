@@ -29,7 +29,6 @@ function Projects(props) {
   };
   return (
     <Box
-      fill="true"
       pad={{ bottom: "35px", top: "medium", left: "medium", right: "medium" }}
       round="xsmall"
       background="#ffffff"

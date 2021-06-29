@@ -4,7 +4,6 @@ import { Container, Row, Col } from "react-grid-system";
 function Contact(props) {
   return (
     <Box
-      fill="true"
       pad="medium"
       round="xsmall"
       background="#ffffff"

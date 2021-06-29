@@ -4,7 +4,6 @@ function BlogPost(props) {
   return (
     <div style={{ padding: "6px" }}>
       <Box
-        fill="true"
         pad="medium"
         background="#ffffff"
         style={{ outline: "1px solid lightgrey" }}
