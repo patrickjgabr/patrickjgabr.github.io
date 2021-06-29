@@ -25,19 +25,15 @@ function Contact(props) {
         <Box width={"400px"}>Text</Box>
         <Box fill={true} pad={{ horizontal: "xlarge" }} gap="small">
           <Form value={value} onChange={(nextValue) => setValue(nextValue)}>
-            <Box
-              direction="row-responsive"
-              style={{ display: "flex", justifyContent: "space-between" }}
-            >
-              <div>
-                <Text fill>Name</Text>
-
-                <TextInput id="name" name="name" size="medium" />
-              </div>
-              <div>
+            <Box direction="row-responsive" gap="10%">
+              <Box fill={true}>
+                <Text>Name</Text>
+                <TextInput id="name" name="name" />
+              </Box>
+              <Box fill={true}>
                 <Text>Email</Text>
-                <TextInput id="email" name="email" size="medium" />
-              </div>
+                <TextInput id="email" name="email" />
+              </Box>
             </Box>
             <div>
               <div style={{ paddingBottom: "10px", paddingTop: "20px" }}>
