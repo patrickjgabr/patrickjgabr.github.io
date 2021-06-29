@@ -12,20 +12,16 @@ import "slick-carousel/slick/slick-theme.css";
 const theme = {
   global: {
     colors: {
-      brand: "#228BE6",
+      brand: "#50fa7b",
+      "accent-1": "#8be9fd",
+      "accent-2": "#7FFFB0",
+      "accent-3": "#8FFFB0",
+      "accent-4": "#9FFFB0",
     },
     font: {
       family: "Roboto",
       size: "18px",
       height: "20px",
-    },
-  },
-  button: {
-    padding: {
-      horizontal: "10px",
-    },
-    border: {
-      radius: "0px",
     },
   },
 };
