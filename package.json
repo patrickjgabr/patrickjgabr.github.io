@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "netlify dev"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,5 @@
   "bugs": {
     "url": "https://github.com/patrickjgabr/patrickjgabr.github.io/issues"
   },
-  "homepage": "https://github.com/patrickjgabr/patrickjgabr.github.io#readme"
+  "homepage": "/"
 }
