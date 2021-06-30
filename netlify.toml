@@ -5,3 +5,4 @@ functions = 'functions'
   from = "/*"
   to = "https://patrickjgabr.github.io/"
   status = 200
+  force = true
