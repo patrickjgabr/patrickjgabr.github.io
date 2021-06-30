@@ -2,7 +2,7 @@
 functions = 'functions'
 
 [[redirects]]
-  from = "/*"
-  to = "patrickjgabr.github.io"
-  status = 200
-  force = true
+from = "/*"
+to = "https://patrickjgabr.github.io/"
+status = 301
+force = false
