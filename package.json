@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/patrickjgabr/patrickjgabr.github.io/issues"
   },
-  "homepage": "/"
+  "homepage": "/",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
 }
