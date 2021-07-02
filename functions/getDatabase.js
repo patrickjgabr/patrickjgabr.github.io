@@ -27,7 +27,7 @@ exports.handler = async function (event, context) {
   const returnheaders = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Allow-Methods": "GET, POST",
+    "Access-Control-Allow-Methods": "GET, POST, DELETE, HEAD, OPTONS",
   };
 
   const url = "https://api.notion.com/v1/databases/" + q + "/query";
