@@ -6,3 +6,6 @@ from = "/*"
 to = "https://patrickjgabr.github.io/"
 status = 301
 force = false
+
+[dev]
+  autoLaunch = false
