@@ -8,6 +8,7 @@ exports.handler = async function (event, context) {
   if (event.queryStringParameters.q == "blog") {
     q = process.env.BlogDB;
   }
+
   if (q == undefined) {
     return {
       statusCode: 401,
@@ -26,8 +27,6 @@ exports.handler = async function (event, context) {
 
   const returnheaders = {
     "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Allow-Methods": "GET, POST, DELETE, HEAD, OPTONS",
   };
 
   const url = "https://api.notion.com/v1/databases/" + q + "/query";
@@ -53,8 +52,8 @@ exports.handler = async function (event, context) {
       });
       return {
         statusCode: 200,
-        body: JSON.stringify({ results: pages }),
         returnheaders,
+        body: JSON.stringify({ results: pages }),
       };
     });
 };
