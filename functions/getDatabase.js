@@ -25,10 +25,6 @@ exports.handler = async function (event, context) {
     },
   };
 
-  const returnheaders = {
-    "Access-Control-Allow-Origin": "*",
-  };
-
   const url = "https://api.notion.com/v1/databases/" + q + "/query";
 
   return fetch(url, headers)
@@ -52,7 +48,9 @@ exports.handler = async function (event, context) {
       });
       return {
         statusCode: 200,
-        returnheaders,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
         body: JSON.stringify({ results: pages }),
       };
     });
