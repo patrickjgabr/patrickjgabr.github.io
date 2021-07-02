@@ -1,8 +1,20 @@
 import { Box, Heading } from "grommet";
 import Project from "./Project";
 import Slider from "react-slick";
+import { useState, useEfffect } from "react";
+const fetch = require("node-fetch");
 
 function Projects(props) {
+  const [projects, setProjects] = useState("loading");
+
+  const getProjects = () => {
+    fetch(
+      "https://youfourdev.netlify.app/.netlify/functions/getDatabase?q=projects"
+    )
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
   var settings = {
     arrows: false,
     dots: true,
@@ -38,12 +50,7 @@ function Projects(props) {
         Projects
       </Heading>
       <Box pad={{ bottom: "medium" }}>
-        <Slider {...settings}>
-          <Project title="Project 1" />
-          <Project title="Project 2" />
-          <Project title="Project 3" />
-          <Project title="Project 4" />
-        </Slider>
+        <Slider {...settings}>{getProjects}</Slider>
       </Box>
     </Box>
   );
