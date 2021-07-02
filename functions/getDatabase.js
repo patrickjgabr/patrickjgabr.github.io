@@ -24,6 +24,12 @@ exports.handler = async function (event, context) {
     },
   };
 
+  const returnheaders = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "GET, POST",
+  };
+
   const url = "https://api.notion.com/v1/databases/" + q + "/query";
 
   return fetch(url, headers)
@@ -48,6 +54,7 @@ exports.handler = async function (event, context) {
       return {
         statusCode: 200,
         body: JSON.stringify({ results: pages }),
+        returnheaders,
       };
     });
 };
