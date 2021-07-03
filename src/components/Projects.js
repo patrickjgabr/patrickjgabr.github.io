@@ -1,19 +1,33 @@
 import { Box, Heading } from "grommet";
 import Project from "./Project";
 import Slider from "react-slick";
-import { useState, useEfffect } from "react";
+import { useState, useEffect } from "react";
 const fetch = require("node-fetch");
 
 function Projects(props) {
   const [projects, setProjects] = useState("loading");
+
+  const renderProjects = () => {
+    return projects.map((project, key) => (
+      <Project title={project.name} key={key}></Project>
+    ));
+  };
 
   const getProjects = () => {
     fetch(
       "https://youfourdev.netlify.app/.netlify/functions/getDatabase?q=projects"
     )
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setProjects(data.results));
   };
+
+  if (projects != "loading") {
+    console.log(projects);
+  }
+
+  useEffect(() => {
+    getProjects();
+  }, []);
 
   var settings = {
     arrows: false,
@@ -50,7 +64,9 @@ function Projects(props) {
         Projects
       </Heading>
       <Box pad={{ bottom: "medium" }}>
-        <Slider {...settings}>{getProjects}</Slider>
+        {projects != "loading" && (
+          <Slider {...settings}>{renderProjects()}</Slider>
+        )}
       </Box>
     </Box>
   );
