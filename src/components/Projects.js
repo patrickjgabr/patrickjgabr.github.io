@@ -9,7 +9,7 @@ function Projects(props) {
 
   const renderProjects = () => {
     return projects.map((project, key) => (
-      <Project title={project.name} key={key}></Project>
+      <Project project={project} key={key}></Project>
     ));
   };
 

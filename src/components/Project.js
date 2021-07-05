@@ -1,12 +1,12 @@
-import { Box } from "grommet";
+import { Box, Text, Button } from "grommet";
 
 function Project(props) {
   return (
     <Box
       style={{
         minHeight: "280px",
-        marginLeft:"10px",
-        marginRight:"10px",
+        marginLeft: "10px",
+        marginRight: "10px",
         borderRadius: "5px",
         boxShadow: "0px 0px 0px 1px black",
         background: "#44475a",
@@ -23,7 +23,9 @@ function Project(props) {
           background: "#282a36",
         }}
       >
-        <div style={{ color: "white", fontSize: "16px" }}>{props.title}</div>
+        <div style={{ color: "white", fontSize: "16px" }}>
+          {props.project.name}
+        </div>
         <Box
           style={{
             position: "absolute",
@@ -65,6 +67,14 @@ function Project(props) {
             }}
           />
         </Box>
+      </Box>
+      <Box margin="medium">
+        <Text color={props.project.statusColor} id="summary" size="small">
+          {props.project.status}
+        </Text>
+        <Text color="white" id="summary" size="small">
+          {props.project.summary}
+        </Text>
       </Box>
     </Box>
   );
