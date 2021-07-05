@@ -7,6 +7,7 @@ import {
   TextInput,
   TextArea,
   Text,
+  Markdown,
 } from "grommet";
 import { useState } from "react";
 function Contact(props) {
@@ -21,9 +22,25 @@ function Contact(props) {
       <Heading level={3} margin={{ top: "none", bottom: "small" }}>
         Contact
       </Heading>
-      <Box direction="row-responsive">
-        <Box width={"400px"}>Text</Box>
-        <Box fill={true} pad={{ horizontal: "xlarge" }} gap="small">
+      <Box
+        direction="row-responsive"
+        style={{ display: "flex", justifyContent: "space-evenly" }}
+      >
+        <Box
+          width={"250px"}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Markdown style={{ textAlign: "center" }}>
+            If you have any questions, job opportunities or want to get in
+            touch, feel free to contact me via the provided form or email me
+            directly at: **patrickjgabr@gmail.com**
+          </Markdown>
+        </Box>
+        <Box gap="small">
           <Form
             value={value}
             onChange={(nextValue) => setValue(nextValue)}
@@ -53,7 +70,6 @@ function Contact(props) {
                 display: "flex",
                 justifyContent: "center",
                 paddingTop: "10px",
-                paddingBottom: "20px",
               }}
             >
               <Button secondary label="Submit" type="submit" />
