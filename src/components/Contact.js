@@ -24,14 +24,21 @@ function Contact(props) {
       </Heading>
       <Box
         direction="row-responsive"
-        style={{ display: "flex", justifyContent: "space-evenly" }}
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          alignContent: "space-between",
+        }}
       >
         <Box
-          width={"250px"}
+          alignSelf="center"
           style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            maxWidth: "350px",
+            paddingBottom: "50px",
+            paddingTop: "30px",
           }}
         >
           <Markdown style={{ textAlign: "center" }}>
