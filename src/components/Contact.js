@@ -56,7 +56,7 @@ function Contact(props) {
                 <TextInput id="email" name="email" />
               </Box>
             </Box>
-            <div style={{ paddingBottom: "10px", paddingTop: "20px" }}>
+            <div style={{ paddingTop: "20px" }}>
               <Text>Message</Text>
             </div>
             <TextArea
