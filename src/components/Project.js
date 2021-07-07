@@ -69,13 +69,48 @@ function Project(props) {
         </Box>
       </Box>
       <Box margin="medium">
-        <Text color={props.project.statusColor} id="summary" size="small">
+        <Text
+          color={props.project.statusColor}
+          id="summary"
+          size="small"
+          style={{ fontWeight: "bold" }}
+        >
           {props.project.status}
         </Text>
         <Text color="white" id="summary" size="small">
           {props.project.summary}
         </Text>
       </Box>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-start",
+          marginLeft: "25px",
+          flexWrap: "wrap-reverse",
+          marginTop: "auto",
+          marginBottom: "15px",
+        }}
+      >
+        {props.project.tags.map((tag) => {
+          return (
+            <Box
+              background="#6272a4"
+              style={{ marginRight: "10px", marginBottom: "10px" }}
+              round="xsmall"
+              pad="5px"
+            >
+              <Text
+                size="xsmall"
+                color="	white"
+                style={{ fontFamily: "Hack", fontWeight: "bold" }}
+              >
+                {tag.name}
+              </Text>
+            </Box>
+          );
+        })}
+      </div>
     </Box>
   );
 }
