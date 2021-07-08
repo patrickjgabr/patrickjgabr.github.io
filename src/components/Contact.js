@@ -112,23 +112,25 @@ function Contact(props) {
           >
             <Box direction="row-responsive" gap="5%">
               <Box fill={true}>
-                <Text>Name</Text>
-                <TextInput id="name" name="name" />
+                <FormField name="name" htmlFor="name" label="Name">
+                  <TextInput id="name" name="name" />
+                </FormField>
               </Box>
               <Box fill={true}>
-                <Text>Email</Text>
-                <TextInput id="email" name="email" />
+                <FormField name="email" htmlFor="email" label="Email">
+                  <TextInput id="email" name="email" />
+                </FormField>
               </Box>
             </Box>
-            <div style={{ paddingTop: "20px" }}>
-              <Text>Message</Text>
-            </div>
-            <TextArea
-              id="message"
-              name="message"
-              resize="vertical"
-              style={{ height: "200px" }}
-            ></TextArea>
+
+            <FormField name="message" htmlFor="message" label="Message">
+              <TextArea
+                id="message"
+                name="message"
+                resize="vertical"
+                style={{ height: "200px" }}
+              ></TextArea>
+            </FormField>
             <div
               style={{
                 display: "flex",
