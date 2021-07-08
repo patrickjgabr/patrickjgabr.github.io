@@ -92,13 +92,14 @@ function Project(props) {
           marginBottom: "15px",
         }}
       >
-        {props.project.tags.map((tag) => {
+        {props.project.tags.map((tag, key) => {
           return (
             <Box
               background="#6272a4"
               style={{ marginRight: "10px", marginBottom: "10px" }}
               round="xsmall"
               pad="5px"
+              key={key}
             >
               <Text
                 size="xsmall"

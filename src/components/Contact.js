@@ -10,8 +10,51 @@ import {
   Markdown,
 } from "grommet";
 import { useState } from "react";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const fetch = require("node-fetch");
+
 function Contact(props) {
-  const [value, setValue] = useState({});
+  const [value, setValue] = useState({ name: "", email: "", message: "" });
+  let url = process.env.REACT_APP_FORM;
+  const submit = () => {
+    console.log(JSON.stringify(value));
+    fetch(url, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(value),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success == true) {
+          toast.success("Form Submitted", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+        } else {
+          toast.error("Something went wrong :(", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+        }
+      });
+  };
+
   return (
     <Box
       pad="medium"
@@ -19,6 +62,17 @@ function Contact(props) {
       background="#ffffff"
       margin={{ bottom: "large" }}
     >
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Heading level={3} margin={{ top: "none", bottom: "small" }}>
         Contact
       </Heading>
@@ -51,7 +105,10 @@ function Contact(props) {
           <Form
             value={value}
             onChange={(nextValue) => setValue(nextValue)}
-            onSubmit={() => console.log(value)}
+            onReset={() => setValue({})}
+            onSubmit={({ value }) => {
+              submit();
+            }}
           >
             <Box direction="row-responsive" gap="5%">
               <Box fill={true}>
