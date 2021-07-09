@@ -67,8 +67,8 @@ function App() {
         </Box>
         <Box width={{ min: "300px", max: "1100px" }} margin="auto">
           <Home />
-          <Blog />
           <Projects />
+          <Blog />
           <Contact />
         </Box>
       </div>
