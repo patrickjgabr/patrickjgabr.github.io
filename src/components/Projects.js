@@ -40,7 +40,7 @@ function Projects(props) {
     autoplaySpeed: 5000,
     responsive: [
       {
-        breakpoint: 600,
+        breakpoint: 1000,
         settings: {
           arrows: false,
           draggable: true,

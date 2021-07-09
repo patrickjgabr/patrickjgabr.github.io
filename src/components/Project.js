@@ -93,12 +93,18 @@ function Project(props) {
       <Box
         direction="row"
         gap="xsmall"
-        pad={{ left: "medium", right: "medium", bottom: "medium" }}
+        pad={{ left: "medium", right: "medium", bottom: "15px" }}
         wrap={true}
       >
         {props.project.tags.map((tag, key) => {
           return (
-            <Box background="#6272a4" round="xsmall" pad="5px" key={key}>
+            <Box
+              background="#6272a4"
+              round="xsmall"
+              pad="5px"
+              key={key}
+              style={{ marginBottom: "5px" }}
+            >
               <Text
                 size="xsmall"
                 color="	white"
