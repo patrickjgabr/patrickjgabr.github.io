@@ -7,11 +7,15 @@ function BlogPost(props) {
         pad="medium"
         background="#ffffff"
         style={{ outline: "1px solid lightgrey" }}
+        onClick={() => console.log(props.post.id)}
       >
         <Heading level={4} margin={{ top: "none", bottom: "small" }}>
-          Heading
+          {props.post.name}
         </Heading>
-        <Markdown>Body</Markdown>
+        <Heading level={6} margin={{ top: "none", bottom: "small" }}>
+          {props.post.published}
+        </Heading>
+        <Markdown>{props.post.summary}</Markdown>
       </Box>
     </div>
   );

@@ -2,7 +2,23 @@ import { Box, Grid, Heading, Image, Pagination } from "grommet";
 import Slider from "react-slick";
 import BlogPost from "./BlogPost";
 
+import { useState, useEffect } from "react";
+
 function Blog(props) {
+  const [blogPosts, setBlogPosts] = useState("loading");
+
+  const renderBlogPosts = () => {
+    return blogPosts.map((blogPost, key) => (
+      <BlogPost post={blogPost} key={key}></BlogPost>
+    ));
+  };
+
+  const GetBlogPosts = () => {
+    fetch("https://youfourdev.netlify.app/.netlify/functions/getBlog")
+      .then((res) => res.json())
+      .then((data) => setBlogPosts(data.results));
+  };
+
   var settings = {
     arrows: true,
     dots: true,
@@ -35,6 +51,11 @@ function Blog(props) {
       // instead of a settings object
     ],
   };
+
+  useEffect(() => {
+    GetBlogPosts();
+  }, []);
+
   return (
     <Box
       pad={{ bottom: "35px", top: "medium", left: "medium", right: "medium" }}
@@ -47,12 +68,9 @@ function Blog(props) {
       </Heading>
 
       <Box pad={{ horizontal: "medium", bottom: "medium" }}>
-        <Slider {...settings}>
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
-        </Slider>
+        {blogPosts != "loading" && (
+          <Slider {...settings}>{renderBlogPosts()}</Slider>
+        )}
       </Box>
     </Box>
   );

@@ -14,9 +14,7 @@ function Projects(props) {
   };
 
   const getProjects = () => {
-    fetch(
-      "https://youfourdev.netlify.app/.netlify/functions/getDatabase?q=projects"
-    )
+    fetch("https://youfourdev.netlify.app/.netlify/functions/getProjects")
       .then((res) => res.json())
       .then((data) => setProjects(data.results));
   };
