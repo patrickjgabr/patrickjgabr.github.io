@@ -44,3 +44,37 @@
   -ms-user-select: text;
   user-select: text;
 }
+
+.parent {
+  position: relative;
+  overflow: hidden;
+}
+
+.child {
+  opacity: 25%;
+  fill: white;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  animation: 10s linear 0s infinite falling backwards;
+}
+
+#react {
+  content: url("https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg");
+}
+
+#node {
+  content: url("https://nodejs.org/static/images/logo.svg");
+}
+#hgg {
+  content: url("https://images.squarespace-cdn.com/content/v1/608c818344f885787dcd2e6b/1620253272281-IZMLS2JRPIS32SDV5NFY/Image+from+iOS.png?format=1000w");
+}
+
+@keyframes falling {
+  0% {
+    transform: translateY(-110%);
+  }
+  100% {
+    transform: translateY(300%);
+  }
+}

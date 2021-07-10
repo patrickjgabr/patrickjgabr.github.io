@@ -30,7 +30,23 @@ function App() {
   return (
     <Grommet theme={theme} id="page-container">
       <div id="content-wrap">
-        <Box background="#282a36">
+        <Box background="#282a36" className="parent">
+          <div
+            className="child"
+            id="react"
+            style={{ left: Math.floor(Math.random() * 95) + "vw" }}
+          ></div>
+          <div
+            className="child"
+            id="node"
+            style={{ left: Math.floor(Math.random() * 95) + "vw" }}
+          ></div>
+          <div
+            className="child"
+            id="hgg"
+            style={{ left: Math.floor(Math.random() * 95) + "vw" }}
+          ></div>
+
           <Box
             height="300px"
             style={{ position: "relative", width: "1920px", margin: "auto" }}
