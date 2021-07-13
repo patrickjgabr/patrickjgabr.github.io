@@ -1,4 +1,13 @@
-import { Grommet, Box, Button, Heading, Markdown, Footer, Text } from "grommet";
+import {
+  Grommet,
+  Box,
+  Button,
+  Heading,
+  Markdown,
+  Footer,
+  Text,
+  Image,
+} from "grommet";
 import ContentBox from "./components/ContentBox";
 import { DocumentPdf, Github, Linkedin, Mail, Resume } from "grommet-icons";
 import "./App.css";
@@ -33,21 +42,44 @@ function App() {
         <Box background="#282a36">
           <Box
             height="300px"
-            style={{ position: "relative", width: "1920px", margin: "auto" }}
-            justify="center"
+            style={{
+              position: "relative",
+              width: "1920px",
+              margin: "auto",
+              display: "flex",
+              alignItems: "center",
+            }}
+            direction="row"
           >
-            <Heading
-              margin={{ bottom: "xsmall", top: "none", horizontal: "xlarge" }}
+            <Box
+              direction="row-responsive"
+              gap="medium"
+              style={{
+                position: "absolute",
+                display: "flex",
+                alignItems: "center",
+              }}
+              pad={{ horizontal: "xlarge" }}
             >
-              Patrick Gabriel
-            </Heading>
-            <Heading
-              level={2}
-              margin={{ vertical: "none", horizontal: "xlarge" }}
-              color="#50fa7b"
-            >
-              Aspiring Software Engineer from Brisbane, Australia.
-            </Heading>
+              <Box width="125px" height="125px">
+                <Image
+                  fit="cover"
+                  src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
+                />
+              </Box>
+              <Box>
+                <Heading margin={{ bottom: "xsmall", top: "none" }}>
+                  Patrick Gabriel
+                </Heading>
+                <Heading
+                  level={2}
+                  margin={{ vertical: "none" }}
+                  color="#50fa7b"
+                >
+                  Aspiring Software Engineer from Brisbane, Australia.
+                </Heading>
+              </Box>
+            </Box>
 
             <Box
               style={{ position: "absolute", bottom: 0, right: 0 }}

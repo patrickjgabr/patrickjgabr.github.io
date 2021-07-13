@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Box, Heading, Markdown, Text } from "grommet";
+import { Box, Heading, Markdown, Text, Image } from "grommet";
 
 function Home(props) {
   const [post, setPost] = useState("");
@@ -22,61 +22,65 @@ function Home(props) {
       background="#ffffff"
       margin={{ bottom: "large", top: "48px" }}
     >
-      <Markdown>{post}</Markdown>
-      <Box direction="row-responsive" gap="medium">
+      <Box direction="row" gap="medium" justify="between">
+        <Box>
+          <Markdown>{post}</Markdown>
+        </Box>
+      </Box>
+      <Box direction="row-responsive" gap="large">
         <div>
-          <Heading level={4} margin={{ vertical: "small" }}>
+          <Heading level={5} margin={{ vertical: "small" }}>
             Primary Languages
           </Heading>
           <Box direction="column" gap="xsmall">
             <Box direction="row" gap="small">
               <i class="devicon-javascript-plain colored"></i>
-              <Text>JavaScript</Text>
-            </Box>
-            <Box direction="row" gap="small">
-              <i class="devicon-python-plain colored"></i>
-              <Text>Python</Text>
+              <Text size="small">JavaScript</Text>
             </Box>
             <Box direction="row" gap="small">
               <i class="devicon-dart-plain colored"></i>
-              <Text>Dart</Text>
+              <Text size="small">Dart</Text>
+            </Box>
+            <Box direction="row" gap="small">
+              <i class="devicon-python-plain colored"></i>
+              <Text size="small">Python</Text>
             </Box>
             <Box direction="row" gap="small">
               <i class="devicon-java-plain colored"></i>
-              <Text>Java</Text>
+              <Text size="small">Java</Text>
             </Box>
             <Box direction="row" gap="small">
               <i class="devicon-csharp-plain-wordmark colored"></i>
-              <Text>C#</Text>
+              <Text size="small">C#</Text>
             </Box>
           </Box>
         </div>
         <div>
-          <Heading level={4} margin={{ vertical: "small" }}>
+          <Heading level={5} margin={{ vertical: "small" }}>
             {"Technologies"}
           </Heading>
           <Box direction="column" gap="xsmall">
             <Box direction="row" gap="small">
               <i class="devicon-react-plain colored"></i>
-              <Text>React</Text>
+              <Text size="small">React</Text>
             </Box>
             <Box direction="row" gap="small">
               <i class="devicon-nodejs-plain colored"></i>
-              <Text>Node.js</Text>
+              <Text size="small">Node.js</Text>
             </Box>
             <Box direction="row" gap="small">
               <i class="devicon-express-original colored"></i>
-              <Text>Express</Text>
+              <Text size="small">Express</Text>
             </Box>
             <Box direction="row" gap="small">
               <i class="devicon-flutter-plain colored"></i>
-              <Text>Flutter</Text>
+              <Text size="small">Flutter</Text>
             </Box>
           </Box>
         </div>
 
         <div>
-          <Heading level={4} margin={{ vertical: "small" }}>
+          <Heading level={5} margin={{ vertical: "small" }}>
             Tools
           </Heading>
           <Box direction="column" gap="xsmall">
@@ -99,22 +103,22 @@ function Home(props) {
           </Box>
         </div>
         <div>
-          <Heading level={4} margin={{ vertical: "small" }}>
+          <Heading level={5} margin={{ vertical: "small" }}>
             Databases
           </Heading>
           <Box direction="column" gap="xsmall">
             <Box direction="row" gap="small">
               <i class="devicon-postgresql-plain colored"></i>
-              <Text>PostgresQL</Text>
+              <Text size="small">PostgresQL</Text>
             </Box>
             <Box direction="row" gap="small">
               <i class="devicon-mongodb-plain colored"></i>
-              <Text>MongoDB</Text>
+              <Text size="small">MongoDB</Text>
             </Box>
           </Box>
         </div>
         <div>
-          <Heading level={4} margin={{ vertical: "small" }}>
+          <Heading level={5} margin={{ vertical: "small" }}>
             Concepts
           </Heading>
           <Box direction="column" gap="xsmall">
