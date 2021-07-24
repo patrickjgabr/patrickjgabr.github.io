@@ -1,4 +1,4 @@
-import { Box, Grid, Heading, Image, Pagination } from "grommet";
+import { Box, Grid, Heading, Image, Pagination, Text } from "grommet";
 import Slider from "react-slick";
 import BlogPost from "./BlogPost";
 
@@ -46,9 +46,6 @@ function Blog(props) {
           slidesToScroll: 1,
         },
       },
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
     ],
   };
 
@@ -62,11 +59,16 @@ function Blog(props) {
       round="xsmall"
       background="#ffffff"
       margin={{ bottom: "large" }}
+      gap="medium"
     >
-      <Heading level={3} margin={{ top: "none", bottom: "medium" }}>
+      <Heading level={3} margin={{ top: "none", bottom: "none" }}>
         Blog
       </Heading>
-
+      <Text>
+        Bellow I'll be documenting my journey as an aspiring software engineer.
+        Majority of the content will be based around my thoughts and experiences
+        throughout my own personal and professional development.
+      </Text>
       <Box pad={{ horizontal: "medium", bottom: "medium" }}>
         {blogPosts != "loading" && (
           <Slider {...settings}>{renderBlogPosts()}</Slider>

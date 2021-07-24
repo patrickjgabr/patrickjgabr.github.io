@@ -24,7 +24,7 @@ function Home(props) {
     >
       <Box direction="row" gap="medium" justify="between">
         <Box>
-          <Markdown>{post}</Markdown>
+          <Markdown fill={true}>{post}</Markdown>
         </Box>
       </Box>
       <Box direction="row-responsive" gap="large">
