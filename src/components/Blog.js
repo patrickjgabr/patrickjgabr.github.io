@@ -58,7 +58,6 @@ function Blog(props) {
       pad={{ bottom: "35px", top: "medium", left: "medium", right: "medium" }}
       round="xsmall"
       background="#ffffff"
-      margin={{ bottom: "large" }}
       gap="medium"
     >
       <Heading level={3} margin={{ top: "none", bottom: "none" }}>

@@ -22,11 +22,6 @@ function Home(props) {
       background="#ffffff"
       margin={{ bottom: "large", top: "48px" }}
     >
-      <Box direction="row" gap="medium" justify="between">
-        <Box>
-          <Markdown fill={true}>{post}</Markdown>
-        </Box>
-      </Box>
       <Box direction="row-responsive" gap="large">
         <div>
           <Heading level={5} margin={{ vertical: "small" }}>

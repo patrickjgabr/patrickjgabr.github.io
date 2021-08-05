@@ -56,7 +56,7 @@ function Projects(props) {
       pad={{ bottom: "35px", top: "medium", left: "medium", right: "medium" }}
       round="xsmall"
       background="#ffffff"
-      margin={{ bottom: "large" }}
+      margin={{ top: "large", bottom: "large" }}
     >
       <Heading level={3} margin={{ top: "none", bottom: "medium" }}>
         Projects

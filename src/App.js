@@ -8,6 +8,7 @@ import {
   Text,
   Image,
 } from "grommet";
+import { useEffect, useState } from "react";
 import ContentBox from "./components/ContentBox";
 import { DocumentPdf, Github, Linkedin, Mail, Resume } from "grommet-icons";
 import "./App.css";
@@ -36,71 +37,87 @@ const theme = {
 };
 
 function App() {
+  const [post, setPost] = useState("");
+
+  useEffect(() => {
+    import("./about.md")
+      .then((res) => {
+        fetch(res.default)
+          .then((res) => res.text())
+          .then((res) => setPost(res))
+          .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <Grommet theme={theme} id="page-container">
       <div id="content-wrap">
-        <Box background="#282a36">
+        <Box
+          background="#282a36"
+          style={{ position: "relative", minHeight: "600px" }}
+        >
           <Box
-            height="300px"
             style={{
-              position: "relative",
-              width: "1920px",
+              position: "absolute",
+              margin: "auto",
+              left: 0,
+              right: 0,
+              width: "1200px",
+              display: "flex",
+              justifyContent: "flex-end",
+            }}
+            pad="small"
+            direction="row"
+            gap="small"
+          >
+            <Button
+              icon={<Mail color="#ff5555" />}
+              onClick={() => window.open("mailto:patrickjgabr@gmail.com")}
+            />
+            <Button icon={<Linkedin color="#8be9fd" />} />
+            <Button icon={<Github color="#ffb86c" />} />
+            {/* <Button primary label="Resume" icon={<DocumentPdf />} /> */}
+          </Box>
+          <Box
+            style={{
               margin: "auto",
               display: "flex",
               alignItems: "center",
             }}
-            direction="row"
+            direction="row-responsive"
+            gap="large"
+            pad="xlarge"
           >
-            <Box
-              direction="row-responsive"
-              gap="medium"
-              style={{
-                position: "absolute",
-                display: "flex",
-                alignItems: "center",
-              }}
-              pad={{ horizontal: "xlarge" }}
-            >
-              <Box width="125px" height="125px">
-                <Image
-                  fit="cover"
-                  src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
-                />
-              </Box>
-              <Box>
-                <Heading margin={{ bottom: "xsmall", top: "none" }}>
-                  Patrick Gabriel
-                </Heading>
-                <Heading
-                  level={2}
-                  margin={{ vertical: "none" }}
-                  color="#50fa7b"
-                >
-                  Aspiring Software Engineer from Brisbane, Australia.
-                </Heading>
+            <Box>
+              <Heading margin={{ bottom: "small", top: "medium" }}>
+                Patrick Gabriel
+              </Heading>
+              <Heading
+                level={2}
+                color="#50fa7b"
+                margin={{ top: "none", bottom: "small" }}
+              >
+                Aspiring Software Engineer from Brisbane, Australia.
+              </Heading>
+
+              <Box width={{ max: "700px" }} margin={{ bottom: "small" }}>
+                <Text size="large">{post}</Text>
               </Box>
             </Box>
 
-            <Box
-              style={{ position: "absolute", bottom: 0, right: 0 }}
-              pad="small"
-              direction="row"
-              gap="small"
-            >
-              <Button
-                icon={<Mail color="#ff5555" />}
-                onClick={() => window.open("mailto:patrickjgabr@gmail.com")}
+            <Box width="300px" height="300px">
+              <Image
+                fit="cover"
+                src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
               />
-              <Button icon={<Linkedin color="#8be9fd" />} />
-              <Button icon={<Github color="#ffb86c" />} />
-              {/* <Button primary label="Resume" icon={<DocumentPdf />} /> */}
             </Box>
           </Box>
         </Box>
         <Box width={{ min: "300px", max: "1100px" }} margin="auto">
-          <Home />
           <Projects />
           <Blog />
+          <Home />
           <Contact />
         </Box>
       </div>
