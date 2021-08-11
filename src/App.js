@@ -75,8 +75,24 @@ function App() {
               icon={<Mail color="#ff5555" />}
               onClick={() => window.open("mailto:patrickjgabr@gmail.com")}
             />
-            <Button icon={<Linkedin color="#8be9fd" />} />
-            <Button icon={<Github color="#ffb86c" />} />
+            <Button
+              icon={
+                <Linkedin
+                  color="#8be9fd"
+                  onClick={() =>
+                    window.open("https://www.linkedin.com/in/patrickjgabr/")
+                  }
+                />
+              }
+            />
+            <Button
+              icon={
+                <Github
+                  color="#ffb86c"
+                  onClick={() => window.open("https://github.com/patrickjgabr")}
+                />
+              }
+            />
             {/* <Button primary label="Resume" icon={<DocumentPdf />} /> */}
           </Box>
           <Box
