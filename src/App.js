@@ -13,7 +13,7 @@ import ContentBox from "./components/ContentBox";
 import { DocumentPdf, Github, Linkedin, Mail, Resume } from "grommet-icons";
 import "./App.css";
 import Blog from "./components/Blog";
-import Home from "./components/Home";
+import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import "slick-carousel/slick/slick.css";
@@ -132,8 +132,8 @@ function App() {
         </Box>
         <Box width={{ min: "300px", max: "1100px" }} margin="auto">
           <Projects />
-          <Blog />
-          <Home />
+          {/* <Blog /> */}
+          <Skills />
           <Contact />
         </Box>
       </div>

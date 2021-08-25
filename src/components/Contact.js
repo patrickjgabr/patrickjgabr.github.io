@@ -96,9 +96,9 @@ function Contact(props) {
           }}
         >
           <Markdown style={{ textAlign: "center" }}>
-            If you have any questions, job opportunities or want to get in
-            touch, feel free to contact me via the provided form or email me
-            directly at: **patrickjgabr@gmail.com**
+            If you have any questions, want to work together or get in touch,
+            feel free to contact me via the provided form or email me directly
+            at: **patrickjgabr@gmail.com**
           </Markdown>
         </Box>
         <Box gap="small">

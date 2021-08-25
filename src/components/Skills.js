@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Box, Heading, Markdown, Text, Image } from "grommet";
 
-function Home(props) {
+function Skills(props) {
   const [post, setPost] = useState("");
 
   useEffect(() => {
@@ -141,4 +141,4 @@ function Home(props) {
   );
 }
 
-export default Home;
+export default Skills;
