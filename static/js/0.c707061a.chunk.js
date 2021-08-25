@@ -1,2 +1,0 @@
-(this["webpackJsonppatrickjgabr-react-gh-pages"]=this["webpackJsonppatrickjgabr-react-gh-pages"]||[]).push([[0],{138:function(a,t,p){"use strict";p.r(t),t.default=p.p+"static/media/about.2155f267.md"}}]);
-//# sourceMappingURL=0.c707061a.chunk.js.map
