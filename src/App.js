@@ -7,6 +7,7 @@ import {
   Footer,
   Text,
   Image,
+  Spinner,
 } from "grommet";
 import { useEffect, useState } from "react";
 import ContentBox from "./components/ContentBox";
@@ -37,117 +38,144 @@ const theme = {
 };
 
 function App() {
-  const [post, setPost] = useState("");
+  const [post, setPost] = useState(false);
+  const [projects, setProjects] = useState(false);
 
-  useEffect(() => {
-    import("./about.md")
-      .then((res) => {
-        fetch(res.default)
-          .then((res) => res.text())
-          .then((res) => setPost(res))
-          .catch((err) => console.log(err));
-      })
+  fetch("https://youfourdev.netlify.app/.netlify/functions/getProjects")
+    .then((res) => {
+      if (res.status != 200) {
+        throw new Error("Error status code: " + res.status);
+      }
+      return res.json();
+    })
+    .then((data) => {
+      setProjects(data.results);
+    })
+    .catch((error) => {
+      setProjects(null);
+    });
+
+  import("./about.md").then((res) => {
+    fetch(res.default)
+      .then((res) => res.text())
+      .then((res) => setPost(res))
       .catch((err) => console.log(err));
-  }, []);
+  });
 
-  return (
-    <Grommet theme={theme} id="page-container">
-      <div id="content-wrap">
-        <Box
-          background="#282a36"
-          style={{ position: "relative", minHeight: "600px" }}
-        >
+  if (post && projects != false) {
+    return (
+      <Grommet theme={theme} id="page-container">
+        <div id="content-wrap">
           <Box
-            style={{
-              position: "absolute",
-              margin: "auto",
-              left: 0,
-              right: 0,
-              width: "1200px",
-              display: "flex",
-              justifyContent: "flex-end",
-            }}
-            pad="small"
-            direction="row"
-            gap="small"
+            background="#282a36"
+            style={{ position: "relative", minHeight: "600px" }}
           >
-            <Button
-              icon={<Mail color="#ff5555" />}
-              onClick={() => window.open("mailto:patrickjgabr@gmail.com")}
-            />
-            <Button
-              icon={
-                <Linkedin
-                  color="#8be9fd"
-                  onClick={() =>
-                    window.open("https://www.linkedin.com/in/patrickjgabr/")
-                  }
-                />
-              }
-            />
-            <Button
-              icon={
-                <Github
-                  color="#ffb86c"
-                  onClick={() => window.open("https://github.com/patrickjgabr")}
-                />
-              }
-            />
-            {/* <Button primary label="Resume" icon={<DocumentPdf />} /> */}
-          </Box>
-          <Box
-            style={{
-              margin: "auto",
-              display: "flex",
-              alignItems: "center",
-            }}
-            direction="row-responsive"
-            gap="large"
-            pad="xlarge"
-          >
-            <Box>
-              <Heading margin={{ bottom: "small", top: "medium" }}>
-                Patrick Gabriel
-              </Heading>
-              <Heading
-                level={2}
-                color="#50fa7b"
-                margin={{ top: "none", bottom: "small" }}
-              >
-                Aspiring Software Engineer from Brisbane, Australia.
-              </Heading>
+            <Box
+              style={{
+                position: "absolute",
+                margin: "auto",
+                left: 0,
+                right: 0,
+                width: "1200px",
+                display: "flex",
+                justifyContent: "flex-end",
+              }}
+              pad="small"
+              direction="row"
+              gap="small"
+            >
+              <Button
+                icon={<Mail color="#ff5555" />}
+                onClick={() => window.open("mailto:patrickjgabr@gmail.com")}
+              />
+              <Button
+                icon={
+                  <Linkedin
+                    color="#8be9fd"
+                    onClick={() =>
+                      window.open("https://www.linkedin.com/in/patrickjgabr/")
+                    }
+                  />
+                }
+              />
+              <Button
+                icon={
+                  <Github
+                    color="#ffb86c"
+                    onClick={() =>
+                      window.open("https://github.com/patrickjgabr")
+                    }
+                  />
+                }
+              />
+              {/* <Button primary label="Resume" icon={<DocumentPdf />} /> */}
+            </Box>
+            <Box
+              style={{
+                margin: "auto",
+                display: "flex",
+                alignItems: "center",
+              }}
+              direction="row-responsive"
+              gap="large"
+              pad="xlarge"
+            >
+              <Box>
+                <Heading margin={{ bottom: "small", top: "medium" }}>
+                  Patrick Gabriel
+                </Heading>
+                <Heading
+                  level={2}
+                  color="#50fa7b"
+                  margin={{ top: "none", bottom: "small" }}
+                >
+                  Aspiring Software Engineer from Brisbane, Australia.
+                </Heading>
 
-              <Box width={{ max: "700px" }} margin={{ bottom: "small" }}>
-                <Text size="large">{post}</Text>
+                <Box width={{ max: "700px" }} margin={{ bottom: "small" }}>
+                  <Text size="large">{post}</Text>
+                </Box>
+              </Box>
+
+              <Box width="300px" height="300px">
+                <Image
+                  fit="cover"
+                  src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
+                />
               </Box>
             </Box>
-
-            <Box width="300px" height="300px">
-              <Image
-                fit="cover"
-                src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
-              />
-            </Box>
           </Box>
-        </Box>
-        <Box width={{ min: "300px", max: "1100px" }} margin="auto">
-          <Projects />
-          {/* <Blog /> */}
-          <Skills />
-          <Contact />
-        </Box>
-      </div>
-      <Footer
-        background="#bd93f9"
-        height="50px"
-        justify="center"
-        id="footer"
-        elevation="medium"
+          <Box width={{ min: "300px", max: "1100px" }} margin="auto">
+            {projects != null && <Projects projects={projects} />}
+            <Skills />
+            <Contact />
+          </Box>
+        </div>
+        <Footer
+          background="#bd93f9"
+          height="50px"
+          justify="center"
+          id="footer"
+          elevation="medium"
+        >
+          <Text size="14px">&copy; Copyright 2021, youfour Labs</Text>
+        </Footer>
+      </Grommet>
+    );
+  } else {
+    return (
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-around",
+        }}
       >
-        <Text size="14px">&copy; Copyright 2021, youfour Labs</Text>
-      </Footer>
-    </Grommet>
-  );
+        <Spinner size="large" />
+      </div>
+    );
+  }
 }
 
 export default App;

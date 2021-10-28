@@ -5,27 +5,11 @@ import { useState, useEffect } from "react";
 const fetch = require("node-fetch");
 
 function Projects(props) {
-  const [projects, setProjects] = useState("loading");
-
   const renderProjects = () => {
-    return projects.map((project, key) => (
+    return props.projects.map((project, key) => (
       <Project project={project} key={key}></Project>
     ));
   };
-
-  const getProjects = () => {
-    fetch("https://youfourdev.netlify.app/.netlify/functions/getProjects")
-      .then((res) => res.json())
-      .then((data) => setProjects(data.results));
-  };
-
-  if (projects != "loading") {
-    console.log(projects);
-  }
-
-  useEffect(() => {
-    getProjects();
-  }, []);
 
   var settings = {
     arrows: false,
@@ -62,7 +46,7 @@ function Projects(props) {
         Projects
       </Heading>
       <Box pad={{ bottom: "medium" }}>
-        {projects != "loading" && (
+        {props.projects != "loading" && (
           <Slider {...settings}>{renderProjects()}</Slider>
         )}
       </Box>
