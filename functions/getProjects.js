@@ -16,6 +16,18 @@ exports.handler = async function (event, context) {
   return fetch(url, headers)
     .then((res) => res.json())
     .then((data) => {
+      if (data.status == 429) {
+        return {
+          statusCode: 429,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+          body: JSON.stringify({ error: "Notion rate limit reached." }),
+        };
+      }
+      if (data.status != undefined) {
+        throw new Error("Notion error.");
+      }
       let pages = data.results.map((page) => {
         let result = {};
         result.name = page.properties.Name.title[0].plain_text;
@@ -29,7 +41,6 @@ exports.handler = async function (event, context) {
           _tag.color = tag.color;
           return _tag;
         });
-
         return result;
       });
       return {
@@ -38,6 +49,15 @@ exports.handler = async function (event, context) {
           "Access-Control-Allow-Origin": "*",
         },
         body: JSON.stringify({ results: pages }),
+      };
+    })
+    .catch((error) => {
+      return {
+        statusCode: 500,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+        body: JSON.stringify(error.message),
       };
     });
 };
