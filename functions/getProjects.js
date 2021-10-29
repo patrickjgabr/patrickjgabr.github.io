@@ -34,7 +34,7 @@ exports.handler = async function (event, context) {
         result.status = page.properties.Status.multi_select[0].name;
         result.statusColor = page.properties.Status.multi_select[0].color;
         result.summary = page.properties.Summary.rich_text[0].plain_text;
-        result.image = "";
+        result.image = page.properties.Image.files[0].file.url;
         result.tags = page.properties.Tags.multi_select.map((tag) => {
           let _tag = {};
           _tag.name = tag.name;
