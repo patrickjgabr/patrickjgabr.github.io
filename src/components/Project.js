@@ -70,23 +70,21 @@ function Project(props) {
       </Box>
       <Box margin="medium" direction="row-responsive" gap="xsmall">
         <Box fill={true} flex="shrink">
-          <Text
+          {/* show status  */}
+          {/* <Text
             color={props.project.statusColor}
             id="summary"
             size="small"
             style={{ fontWeight: "bold" }}
           >
             {props.project.status}
-          </Text>
+          </Text> */}
           <Text color="white" id="summary" size="small">
             {props.project.summary}
           </Text>
         </Box>
         <Box width="small" height="small" flex="grow" alignSelf="center">
-          <Image
-            fit="cover"
-            src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
-          />
+          <Image fit="contain" src={props.project.image} />
         </Box>
       </Box>
 
@@ -100,7 +98,7 @@ function Project(props) {
           return (
             <Box
               background="#6272a4"
-              round="xsmall"
+              round="2px"
               pad="5px"
               key={key}
               style={{ marginBottom: "5px" }}

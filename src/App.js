@@ -41,26 +41,27 @@ function App() {
   const [post, setPost] = useState(false);
   const [projects, setProjects] = useState(false);
 
-  fetch("https://youfourdev.netlify.app/.netlify/functions/getProjects")
-    .then((res) => {
-      if (res.status != 200) {
-        throw new Error("Error status code: " + res.status);
-      }
-      return res.json();
-    })
-    .then((data) => {
-      setProjects(data.results);
-    })
-    .catch((error) => {
-      setProjects(null);
-    });
+  useEffect(() => {
+    fetch("https://youfourdev.netlify.app/.netlify/functions/getProjects")
+      .then((res) => {
+        if (res.status != 200) {
+          throw new Error("Error status code: " + res.status);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setProjects(data.results);
+      })
+      .catch((error) => {
+        setProjects(null);
+      });
 
-  import("./about.md").then((res) => {
-    fetch(res.default)
-      .then((res) => res.text())
-      .then((res) => setPost(res))
-      .catch((err) => console.log(err));
-  });
+    import("./about.md").then((res) => {
+      fetch(res.default)
+        .then((res) => res.text())
+        .then((res) => setPost(res));
+    });
+  }, []);
 
   if (post && projects != false) {
     return (
@@ -140,7 +141,8 @@ function App() {
               <Box width="300px" height="300px">
                 <Image
                   fit="cover"
-                  src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
+                  src=""
+                  style={{ backgroundColor: "black" }}
                 />
               </Box>
             </Box>
